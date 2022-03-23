@@ -6,6 +6,9 @@
     --asbestos:#7f8c8d;
     --concrete:#95a5a6;
     --dracorchid:#2d3436;
+    --pink:#ffcccc;
+    --picopink: #fd79a8;
+
 
 }
 
@@ -18,20 +21,35 @@ body
     width: 100%;
     
 }
+header
+{
+    padding-bottom: 30px;
+}
 .row 
 {
     --bs-gutter-x: none;
 } 
+main 
+{
+    padding: 20px 15vw;
+}
 .colorBack
 {
     background-color: var(--dracorchid);
     width: 100%;
     
 }
+.pinkBar
+{
+    
+    background: linear-gradient(45deg, #ffcccc, #fd79a8);
+    height: 5px;
+}
 .titlePosition
 {
     text-align: center;
 }
+
 .titleColor
 {
     text-decoration: none;
@@ -47,20 +65,24 @@ body
 }
 .sizeImg
 {
-    width: 40vw;
+    width: 50vw;
     margin: 10px 20px;
 }
 .leftArrow svg
 {
-    vertical-align: baseline;
+    float: right;
     fill: var(--cloud);
-}
-.resumCenter
-{
-    text-align: center;
-    margin: 10px 30px !important;
-    padding: 0;
     
+}
+.rightArrow svg
+{
+    fill: var(--cloud);
+    float: left;
+    
+}
+.card
+{
+    margin: 10px;
 }
 footer
 {
@@ -74,10 +96,32 @@ footer p
     color: var(--cloud);
     padding: 10px 20px;
 }
-@media screen and (min-width:600px)
- {
-    .col-md-12
+@media  screen and (max-width:1080px) 
+{
+    main 
+    {
+        padding: 0;
+    } 
+    .leftArrow
     {
         display: none;
-    }   
+    }
+    .rightArrow
+    {
+        display: none;
+    }
+    .carousel
+    {
+        text-align: center;
+    }
+    .hamburger svg
+    {
+        fill: var(--cloud);
+        float: right;
+        margin: auto;
+    }
+
+   
 }
+
+
