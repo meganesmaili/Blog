@@ -21,8 +21,11 @@ body
     width: 100%;
     
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
 header
 {
     padding-bottom: 30px;
@@ -76,13 +79,19 @@ main
 }
 .sizeImg
 {
+<<<<<<< HEAD
     width: 100%;
     
+=======
+    width: 50vw;
+    margin: 10px 20px;
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
 }
 .leftArrow svg
 {
     float: right;
     fill: var(--cloud);
+<<<<<<< HEAD
     margin: 10px;
     
 }
@@ -159,23 +168,33 @@ input[type="button"] {
 	width: 1px;
 	overflow: hidden;
 }
+=======
+    
+}
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
 .rightArrow svg
 {
     fill: var(--cloud);
     float: left;
+<<<<<<< HEAD
     margin: 10px;
+=======
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
     
 }
 .card
 {
     margin: 10px;
 }
+<<<<<<< HEAD
 .btn-primary
 {
     color: var(--cloud);
     background-color: var(--dracorchid);
     border-color: var(--asbestos);
 }
+=======
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
 footer
 {
     background-color: var(--dracorchid);
@@ -193,7 +212,11 @@ footer p
     main 
     {
         padding: 0;
+<<<<<<< HEAD
     }
+=======
+    } 
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
     .leftArrow
     {
         display: none;
@@ -212,6 +235,7 @@ footer p
         float: right;
         margin: auto;
     }
+<<<<<<< HEAD
     .titlePosition
     {
         text-align: initial;
@@ -312,3 +336,10 @@ footer p
     color: var(--cloud);
     padding: 10px 50%;
 }
+=======
+
+   
+}
+
+
+>>>>>>> 86a974017958167fc741e8818f6747d3518b51f5
