@@ -167,7 +167,7 @@ main
 {
     text-decoration: none;
     color: var(--cloud);
-    font-size: 3em;
+    font-size: 4em;
 
 
 }
@@ -180,6 +180,7 @@ main
     color: var(--concrete);
     list-style: none;
     text-decoration: none;
+    font-size: 2em;
 }
 .menuTextColor:hover
 {
@@ -188,8 +189,7 @@ main
 .sizeImg
 {
 
-    width: 100%;
-    width: 50vw;
+    width: 50em;
     margin: 10px 20px;
 
 }
@@ -262,7 +262,10 @@ footer p
     {
         text-align: initial;
     }
-
+    .sizeImg
+    {
+        width: 90%;
+    }
    
 }
 @media screen and (max-width:980px) 
