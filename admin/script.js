@@ -8,7 +8,12 @@ btnDelete.forEach(btn=>
     
         event.preventDefault();
 
-        const myModal = new bootstrap.Modal(document.querySelector('confirmDelete'));
+        // Récupère l'attribut href
+        const href =btn.href;
+        const modalDelete = document.querySelector('.btnDeleteModal');
+        modalDelete.href = href ;
+
+        const modal = new bootstrap.Modal(document.querySelector('confirmDelete'));
 
         console.log('ok');
 

@@ -82,9 +82,9 @@
                     <td class="text-center"><?php echo $article['createdAt']?></td>
                     <td class="text-center">
                     <a href="edit.php?id=<?php echo $article['id']?>" class ="btn btn-primary">Editer</a>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btnDelete" data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete
-                        </button>
+                        
+                        <a href="delete.php?id=<?php echo $article['id']?>" class="btn btn-primary btnDelete" data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete</a>
+                        
                         
                     </td>
                 </th>
@@ -107,7 +107,7 @@
                                 </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Delete</button>
+                                <a href="#" class="btn btn-primary btnDeleteModal">Delete</a>
                         </div>
                     </div>
                 </div>
