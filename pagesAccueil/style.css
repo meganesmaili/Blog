@@ -128,7 +128,12 @@ header
     margin-top: 10px;
     list-style-type: none;
 }
-
+.admin
+{
+    color: var(--cloud);
+    text-align: center;
+    font-size: 1.5em;
+}
 .menuWrappedTitleReference
 {
     text-decoration: none;
@@ -162,6 +167,7 @@ main
 {
     text-align: center;
 }
+
 
 .titleColor
 {
