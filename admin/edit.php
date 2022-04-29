@@ -121,7 +121,7 @@
                     </select>
 
                     <div class="form-group pt-3 mb-3">
-                    <label for=""><?php echo  "{$categ['cover']}" ?></label>
+                    <label for=""><?php echo "{$categ['cover']}" ?></label>
                         <input type="file"  class="mt-3" name="cover">
                     </div>
                 </div>

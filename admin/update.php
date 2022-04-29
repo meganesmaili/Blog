@@ -6,21 +6,28 @@ require_once 'image.php';
 
 
 $id=htmlentities(strip_tags($_GET['id']));
+$title=htmlentities(strip_tags($_POST['title']));
+$content=htmlentities(strip_tags($_POST['content']));
+$categories=htmlentities(strip_tags($_POST['categories']));
 
-$query=$db->prepare('SELECT * FROM post WHERE post.id = :id');
-$query->bindValue(':id',$id,PDO::PARAM_INT);
-$query->execute();
+
+
+$query=$db->query('SELECT * FROM post');
 
 $categ = $query ->fetch();
 
-$title=htmlentities(strip_tags($_POST['title']));
-$content=htmlentities(strip_tags($_POST['content']));
-
-$queryAd ="UPDATE post SET 'post.title'= $title, 'post.content'=$content,  WHERE post.id=$id";
 
 
+$stmt=$db->prepare("UPDATE post SET title= :title, content=:content,  categories_id= :categories_id  WHERE post.id = :id ");
+$stmt->bindValue(':id',$id,PDO::PARAM_INT);
+$stmt->bindValue(':title',$title);
+$stmt->bindValue(':content',$content);
+$stmt->bindValue(':categories_id',$categories,PDO::PARAM_INT);
 
-dump($queryAd);
+$stmt->execute();
+
+
+dump($categories);
 
 
 
