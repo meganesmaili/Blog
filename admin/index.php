@@ -24,6 +24,7 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../pagesAccueil/style.css">
+<script src="script.js" defer></script>
 </head>
 <header class="colorBack">
         <div class="container">
@@ -81,7 +82,10 @@
                     <td class="text-center"><?php echo $article['createdAt']?></td>
                     <td class="text-center">
                     <a href="edit.php?id=<?php echo $article['id']?>" class ="btn btn-primary">Editer</a>
-                        <button class="btn btn-primary">Delete</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btnDelete" data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete
+                        </button>
+                        
                     </td>
                 </th>
 
@@ -90,6 +94,24 @@
             endforeach;
             ?>
         </table>
+        <!-- Modal -->
+            <div class="modal fade" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-dark">Suppression de l'article</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                                <div class="modal-body">
+                                    <p class="text-dark">Etes-vous sur de vouloir supprimer cette article ?</p>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </body>
 </html>
