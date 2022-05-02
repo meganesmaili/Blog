@@ -9,14 +9,14 @@ require_once '../pagesAccueil/connexion.php';
 
 $title = null;
 $content = null;
-$categories = null;
+$category = null;
 $error = null;
 
 if (!empty($_POST)) {
 
     $title=htmlentities(strip_tags($_POST['title']));
     $content=htmlentities(strip_tags($_POST['content']));
-    $categories=htmlentities(strip_tags($_POST['categories']));
+    $categories_id=htmlentities(strip_tags($_POST['categories']));
 
     if ( !empty($title) && !empty($content) && !empty($categories_id) && !empty($_FILES['cover']) && $_FILES['cover']['error'] === 0) {
        require_once 'inc/functions.php';
@@ -29,7 +29,8 @@ if (!empty($_POST)) {
            $query->bindValue(':title', $title);
            $query->bindValue(':content', $content);
            $query->bindValue(':cover', $fileName);
-           $query->bindValue(':users_id', $_SESSION['user']['id'], PDO::PARAM_INT);
+
+           $query->bindValue(':users_id', $_SESSION['users']['id'], PDO::PARAM_INT);
            $query->execute();
 
            header('Location: index.php?successAdd=1');
