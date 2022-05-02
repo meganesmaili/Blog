@@ -9,7 +9,9 @@ require_once '../pagesAccueil/connexion.php';
 
 $title = null;
 $content = null;
+
 $categories = null;
+
 $error = null;
 
 if (!empty($_POST)) {
@@ -25,12 +27,14 @@ if (!empty($_POST)) {
         if (empty($upload['error'])) {
            $fileName = $upload['filename'];
 
+
            $query = $db->prepare('INSERT INTO post (title, content, cover, users_id,categories_id, createdAt) VALUES (:title, :content, :cover, :users_id, :categories_id, NOW())');
            $query->bindValue(':title', $title);
            $query->bindValue(':content', $content);
            $query->bindValue(':cover', $fileName);
            $query->bindValue(':users_id', $_SESSION['user']['id'], PDO::PARAM_INT);
            $query->bindValue(':categories_id', $categories_id);
+
            $query->execute();
 
            header('Location: index.php?successAdd=1');
@@ -43,6 +47,7 @@ if (!empty($_POST)) {
         $error = 'Tous les champs sont obligatoires';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -107,3 +112,4 @@ if (!empty($_POST)) {
             ?>
     </body>
 </html>
+
