@@ -1,15 +1,19 @@
 <?php 
-            require_once '../vendor/autoload.php';
-            require_once '../pagesAccueil/connexion.php';
+    
+
+    require_once 'checkAdmin.php';
+
+    require_once '../vendor/autoload.php';
+    require_once '../pagesAccueil/connexion.php';
 
            
            
 
-            $query=$db->query('SELECT post.id, post.title, post.content, post.cover, post.createdAt, post.categories_id, categories.name AS category FROM post INNER JOIN categories ON categories.id = post.categories_id');
-            $querycat=$db->query('SELECT * FROM categories');
+    $query=$db->query('SELECT post.id, post.title, post.content, post.cover, post.createdAt, post.categories_id, categories.name AS category FROM post INNER JOIN categories ON categories.id = post.categories_id');
+    $querycat=$db->query('SELECT * FROM categories');
 
-            $categ = $query ->fetchAll();
-            $testCat=$querycat->fetchAll(); 
+    $categ = $query ->fetchAll();
+    $testCat=$querycat->fetchAll(); 
 
             
 

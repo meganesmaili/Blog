@@ -1,8 +1,11 @@
 <?php
 
+
+
 require_once '../vendor/autoload.php';
 require_once '../pagesAccueil/connexion.php';
 require_once 'image.php';
+require_once 'checkAdmin.php';
 
 $title=htmlentities(strip_tags($_POST['title']));
 $content=htmlentities(strip_tags($_POST['content']));

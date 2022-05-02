@@ -1,5 +1,7 @@
 <?php
    
+   require_once 'checkAdmin.php';
+
     $error = null;
     
     // Vérifie si un fichier est bien envoyé

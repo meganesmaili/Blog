@@ -1,5 +1,5 @@
 <?php
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 require_once 'connexion.php';
 
   $id = htmlspecialchars(strip_tags($_GET['id']));
@@ -104,7 +104,7 @@ require_once 'connexion.php';
 
                 echo '<div class="col-lg-6 col-md-12">'.
                         '<div class="card ">'. 
-                              "<img src=Images/upload/{$article['cover']}   class=\"card-img-top\" alt=\"...\">".
+                              "<img src=../Images/upload/{$article['cover']}   class=\"card-img-top\" alt=\"...\">".
 
                               "<p class=\"card-text\">{$newDate}</p>".
 
@@ -114,7 +114,7 @@ require_once 'connexion.php';
 
                                "<p class=\"card-text\">{$shortText}</p>".
 
-                              "<a href=\"pagesArticles/articlesTest.php?id={$article['id']} \"class=\"btn btn-primary\">Plus d'infos</a>".
+                              "<a href=\"../pagesArticles/articlesTest.php?id={$article['id']} \"class=\"btn btn-primary\">Plus d'infos</a>".
 
                               "<a href=\"../categories.php?id={$article['categories_id']} \" class =\"btn btn-primary\"> 
                               Categorie {$article['category']} </a>".

@@ -22,7 +22,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
   }); 
 
 
-const path = "Images/"
+const path = "../Images/"
+console.log(path);
 const picture = ["Godsofmen.jpg","serpentDove.jpg","lapassemiroir.jpg","theweekeddeep.jpeg", "HP1.jpg","lesSorcièresduClanduNord.jpg.crdownload"]
 const pictures = document.querySelector(".carousel img")
 let previousCarousel = document.querySelector(".leftArrow")

@@ -1,7 +1,7 @@
 <?php
 # When installed via composer
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 require_once 'connexion.php';
 

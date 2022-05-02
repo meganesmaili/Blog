@@ -1,7 +1,10 @@
 <?php
 
+  
+
     require_once '../vendor/autoload.php';
     require_once '../pagesAccueil/connexion.php';
+    require_once 'checkAdmin.php';
 
     
     $query=$db->prepare('SELECT * FROM post');

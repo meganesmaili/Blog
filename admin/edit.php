@@ -1,19 +1,22 @@
 <?php 
-            require_once '../vendor/autoload.php';
-            require_once '../pagesAccueil/connexion.php';
+    
+    require_once 'checkAdmin.php';
+    
+    require_once '../vendor/autoload.php';
+    require_once '../pagesAccueil/connexion.php';
 
            
-            $id = htmlspecialchars(strip_tags($_GET['id']));
+    $id = htmlspecialchars(strip_tags($_GET['id']));
            
 
-            $query=$db->prepare('SELECT * FROM post WHERE post.id = :id');
-            $querycat=$db->query('SELECT * FROM categories');
+    $query=$db->prepare('SELECT * FROM post WHERE post.id = :id');
+    $querycat=$db->query('SELECT * FROM categories');
 
-            $query->bindValue(':id',$id,PDO::PARAM_INT);
-            $query->execute();
+    $query->bindValue(':id',$id,PDO::PARAM_INT);
+    $query->execute();
 
-            $categ = $query ->fetch();
-            $testCat=$querycat->fetchAll(); 
+    $categ = $query ->fetch();
+    $testCat=$querycat->fetchAll(); 
 
            
             
