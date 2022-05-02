@@ -9,15 +9,19 @@ require_once 'connexion.php';
 
 $faker = Faker\Factory::create('fr_FR');
 
+//$db->query('SET FOREIGN_KEY_CHECKS = 0; TRUNCATE post; SET FOREIGN_KEY_CHECKS =1');
+
+//$categories = ["Science-fiction","Fantaisie","Fantastique","Théatre","Mangas"];
+
 // Insertion de fausses donnée en BDD dans la table catégorie
-/*for ($i=0; $i < 10 ; $i++) { 
+/*/for ($i=0; $i < count($categories); $i++) { 
     $query = $db->prepare('INSERT INTO categories (name) VALUES (:name)');
-    $query->bindValue(':name', $faker->colorName);
+    $query->bindValue(':name', $categories[$i]);
     $query->execute();
 }*/
 
 
-//$db->query('SET FOREIGN_KEY_CHECKS = 0; TRUNCATE post; SET FOREIGN_KEY_CHECKS =1');
+
 
 /*for ($i=0; $i < 20 ; $i++) { 
 
@@ -44,7 +48,7 @@ for ($i=0; $i < 55 ; $i++) {
     $query->bindValue(':cover', 'images.jpg');
     $query->bindValue(':createdAt', $createdAt->format('Y-m-d'));
     $query->bindValue(':users_id', $faker->numberBetween(1, 20));
-    $query->bindValue(':categories_id', $faker->numberBetween(1, 10));
+    $query->bindValue(':categories_id', $faker->numberBetween(1, 5));
 
     $query->execute();
 }

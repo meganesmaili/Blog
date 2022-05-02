@@ -79,41 +79,9 @@ if (!empty($_POST)) {
     <script src="script.js" defer></script>
 </head>
     <body>
-    <header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="../index.html" title="Livres" class="titleColor">Books.</a>
-                </div>
-                <div class="col hamburger d-lg-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </div>
-            </div>
-            <nav class="my-2">
-                <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="../index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+    <?php
+    require_once '../layouts/header.php';
+    ?>
         <form method="post" enctype="multipart/form-data" class="w-50 m-auto ">
         
             <h1>Se connecter</h1>
@@ -134,5 +102,8 @@ if (!empty($_POST)) {
             </div>
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
+        <?php
+    require_once '../layouts/footer.php';
+    ?>
     </body>
 </html>

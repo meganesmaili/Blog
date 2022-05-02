@@ -12,53 +12,42 @@
     <title>Books</title>
 </head>
 <body>
-    <header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="../index.html" title="Livres" class="titleColor">Books.</a>
-                </div>
-                <div class="col hamburger d-lg-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </div>
-            </div>
-            <nav class="my-2">
-                <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+    <?php
+    require_once '../layouts/header.php';
+    ?>
     <section>
         <div class="resumArticle">
-            <h1>Harry Potter</h1>
-            <img src="../Images/HP1.jpg" alt="">
-            <h2>Résumé</h2>
+            <h1>La Passe-Miroir</h1>
+            <img src="../Images/lapassemiroir.jpg" alt="">
+            <h2>Chapitre 1 : L'archiviste</h2>
             <p>
-                Après la mort de ses parents (Lily et James Potter), Harry Potter est recueilli par sa tante maternelle Pétunia et son oncle Vernon à l'âge d'un an. 
-                Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. 
-                Harry ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été, semble-t-il, tués dans un accident de voiture. 
-                Cependant, le jour des onze ans de Harry, un demi-géant du nom de Rubeus Hagrid vient le chercher pour l'informer de son inscription à Poudlard, une école de sorcellerie où il est inscrit depuis sa naissance, et lui remettre sa lettre. 
-                Il lui révèle qu’il a toujours été un sorcier, tout comme l'étaient ses parents, tués en réalité par le plus puissant mage noir du monde de la sorcellerie : Voldemort (surnommé « Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom », « Vous savez qui » ou « Tu sais qui »). 
-                Ce serait Harry lui-même, alors qu'il n'était encore qu'un bébé, qui aurait fait ricocher le sortilège que Voldemort lui destinait, neutralisant ses pouvoirs et le réduisant à l'état de créature insignifiante....</p>
+                On dit souvent des vieilles demeures qu’elles ont une âme. Sur Anima, l’arche où les objets
+                prennent vie, les vieilles demeures ont surtout tendance à développer un épouvantable caractère.
+                Le bâtiment des Archives familiales, par exemple, était continuellement de mauvaise humeur. Il
+                passait ses journées à craqueler, à grincer, à fuir et à souffler pour exprimer son mécontentement. Il
+                n’aimait pas les courants d’air qui faisaient claquer les portes mal fermées en été. Il n’aimait pas les
+                pluies qui encrassaient sa gouttière en automne. Il n’aimait pas l’humidité qui infiltrait ses murs en
+                hiver. Il n’aimait pas les mauvaises herbes qui revenaient envahir sa cour chaque printemps.
+                Mais, par-dessus tout, le bâtiment des Archives n’aimait pas les visiteurs qui ne respectaient pas les
+                horaires d’ouverture.
+                C’est sans doute pourquoi, en ce petit matin de septembre, le bâtiment craquelait, grinçait, fuyait et
+                soufflait encore plus que d’habitude. Il sentait venir quelqu’un alors qu’il était encore beaucoup trop
+                tôt pour consulter les archives. Ce visiteur-là ne se tenait même pas devant la porte d’entrée, sur le
+                perron, en visiteur respectable. Non, il pénétrait dans les lieux comme un voleur, directement par le
+                vestiaire des Archives.
+                Un nez était en train de pousser au beau milieu d’une armoire à glace.
+                Le nez allait en avançant. Il émergea bientôt à sa suite une paire de lunettes, une arcade sourcilière,
+                un front, une bouche, un menton, des joues, des yeux, des cheveux, un cou et des oreilles. Suspendu au
+                milieu du miroir jusqu’aux épaules, le visage regarda à droite, puis à gauche. La pliure d’un genou
+                affleura à son tour, un peu plus bas, et remorqua un corps qui s’arracha tout entier de l’armoire à
+                glace, comme il l’aurait fait d’une baignoire. Une fois sortie du miroir, la silhouette ne se résumait
+                plus qu’à un vieux manteau usé, une paire de lunettes grises, une longue écharpe tricolore.
+                Et sous ces épaisseurs, il y avait Ophélie.
+                Autour d’Ophélie, le vestiaire protestait maintenant de toutes ses armoires, furieux de cette
+                intrusion qui bafouait le règlement des Archives. Les meubles grinçaient des gonds et tapaient des
+                pieds. Les cintres s’entrechoquaient bruyamment comme si un esprit frappeur les poussait les uns
+                contre les autres.Cette démonstration de colère n’intimida pas Ophélie le moins du monde. Elle était habituée à la
+                susceptibilité des Archives....</p>
         </div>
     </section>
     <section class="addComments">

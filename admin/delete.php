@@ -12,7 +12,7 @@ require_once '../pagesAccueil/connexion.php';
 $id = htmlspecialchars(strip_tags($_GET['id']));
 
 // Supprime l'article via son ID
-$query = $db->prepare('DELETE FROM posts WHERE id = :id');
+$query = $db->prepare('DELETE FROM post WHERE id = :id');
 $query->bindValue(':id', $id, PDO::PARAM_INT);
 $query->execute();
 

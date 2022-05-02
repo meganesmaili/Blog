@@ -1,28 +1,3 @@
-<?php 
-            require_once '../vendor/autoload.php';
-            require_once '../pagesAccueil/connexion.php';
-
-           
-            $id = htmlspecialchars(strip_tags($_GET['id']));
-
-            $query=$db->prepare('SELECT post.id, post.title, post.content, post.cover, post.createdAt,post.categories_id, categories.name AS category, users.firstNamer, users.lastName FROM post INNER JOIN categories ON categories.id = post.categories_id INNER JOIN users ON users.id = post.users_id WHERE post.id = :id ORDER BY post.createdAt DESC');
-            $query->bindValue(':id',$id,PDO::PARAM_INT);
-            $query->execute();
-
-        
-
-            $art = $query ->fetch();
-            //dump($art);
-            if (!$art)
-            {
-                header('Location: 404.php');
-            }
-            
-            $originalDate = "{$art['createdAt']}";
-            $DateTime = DateTime::createFromFormat('Y-m-d', $originalDate);
-            $newDate = $DateTime->format('d-F-Y');
-
-             ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,28 +8,26 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="../pagesAcceuil/style.css">
+<link rel="stylesheet" href="../pagesAccueil/style.css">
     <title>Books</title>
 </head>
 <body>
-    <?php
+<?php
     require_once '../layouts/header.php';
     ?>
     <section>
         <div class="resumArticle">
-       
-            
-            <h1><?php echo "{$art['title']}"?></h1>
-                <div class="gap-3 d-flex ">
-                    <p><?php echo"{$newDate}"?></p>
-                    <a href="../categories.php?id=<?php echo $art['categories_id'] ?>" class ="btn btn-primary"><?php echo "{$art['category']}"?></a>
-                    <p class=""><?php echo "{$art['firstNamer']}  {$art['lastName']} " ?></p>
-                </div>
-            <img src=<?php echo "../Images/upload/{$art['cover']}"?> alt="">
-              
-                <p><?php echo "{$art['content']}"?></p>
-                
-                </div>
+            <h1>Harry Potter</h1>
+            <img src="../Images/HP1.jpg" alt="">
+            <h2>Résumé</h2>
+            <p>
+                Après la mort de ses parents (Lily et James Potter), Harry Potter est recueilli par sa tante maternelle Pétunia et son oncle Vernon à l'âge d'un an. 
+                Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. 
+                Harry ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été, semble-t-il, tués dans un accident de voiture. 
+                Cependant, le jour des onze ans de Harry, un demi-géant du nom de Rubeus Hagrid vient le chercher pour l'informer de son inscription à Poudlard, une école de sorcellerie où il est inscrit depuis sa naissance, et lui remettre sa lettre. 
+                Il lui révèle qu’il a toujours été un sorcier, tout comme l'étaient ses parents, tués en réalité par le plus puissant mage noir du monde de la sorcellerie : Voldemort (surnommé « Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom », « Vous savez qui » ou « Tu sais qui »). 
+                Ce serait Harry lui-même, alors qu'il n'était encore qu'un bébé, qui aurait fait ricocher le sortilège que Voldemort lui destinait, neutralisant ses pouvoirs et le réduisant à l'état de créature insignifiante....</p>
+        </div>
     </section>
     <section class="addComments">
         <div class="comments">

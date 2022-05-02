@@ -29,46 +29,25 @@
 <link rel="stylesheet" href="../pagesAccueil/style.css">
 <script src="script.js" defer></script>
 </head>
-<header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="../index.html" title="Livres" class="titleColor">Books.</a>
-                </div>
-                <div class="col hamburger d-lg-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </div>
-            </div>
-            <nav class="my-2">
-                <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="../index.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.php">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+<?php
+    require_once '../layouts/header.php';
+    ?>
     <body>
         <div class="d-flex w-75 m-auto pt-2 pb-2 justify-content-between"">
             <h3>Gestion des articles</h3>
             <a href="form.php" class="btn btn-primary">Add + </a>
         </div>
+             <?php if(isset($_GET['successAdd'])): ?>
+                    <div class="alert alert-success mb-4">
+                        L'article à bien été ajouté !
+                    </div>
+                <?php endif; ?>
+
+                <?php if(isset($_GET['successDelete'])): ?>
+                    <div class="alert alert-success mb-4">
+                        L'article à bien été supprimé !
+                    </div>
+				<?php endif; ?>
         <table class="table table-dark table-hover w-75 m-auto">
             <thead class="text-align">
                 <th scope="col" class="text-center">Id</th>
@@ -116,5 +95,8 @@
                 </div>
             </div>
 
+            <?php
+    require_once '../layouts/footer.php';
+    ?>
     </body>
 </html>

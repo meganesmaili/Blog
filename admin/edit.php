@@ -5,21 +5,71 @@
     require_once '../vendor/autoload.php';
     require_once '../pagesAccueil/connexion.php';
 
-           
+   
+    
+    $querycat=$db->query('SELECT * FROM categories ORDER BY name');
+    $testCat=$querycat->fetchAll();
+
+
     $id = htmlspecialchars(strip_tags($_GET['id']));
-           
-
     $query=$db->prepare('SELECT * FROM post WHERE post.id = :id');
-    $querycat=$db->query('SELECT * FROM categories');
-
     $query->bindValue(':id',$id,PDO::PARAM_INT);
-    $query->execute();
-
-    $categ = $query ->fetch();
-    $testCat=$querycat->fetchAll(); 
-
-           
-            
+    $query->execute();     
+    $article=$query->fetch();
+      
+    $title = $article['title'];
+    $content = $article['content'];
+    $categorie = $article['categories_id'];
+    $picture = $article['cover'];
+    $error = null;
+    $success = false;
+    
+    
+    if (!empty($_POST)) {
+        // Nettoyage des données
+        $title = htmlspecialchars(strip_tags($_POST['title']));
+        $content = htmlspecialchars(strip_tags($_POST['content']));
+        $categorie = htmlspecialchars(strip_tags($_POST['categories']));
+    
+        // Vérifie que mes champs soient bien remplis
+        if (!empty($title) && !empty($content) && !empty($categorie)) {
+    
+            // Est-ce que je reçois une image ?
+            if (!empty($_FILES['cover']) && $_FILES['cover']['error'] === 0) {
+                // Suppression de l'ancienne image
+                unlink("../images/upload/{$picture}");
+    
+                // Upload de la nouvelle image
+                require_once 'inc/functions.php';
+                $upload = uploadPicture($_FILES['cover'], '../images/upload', 1);
+                
+                // Si je reçois une erreur lors de l'upload, je retourne l'erreur
+                // à ma variable "$error" afin de l'afficher au dessus du formulaire
+                if (!empty($upload['error'])) {
+                    $error = $upload['error'];
+                }
+                else {
+                    $picture = $upload['filename'];
+                }
+            }
+    
+            // Mise à jour en BDD seulement si la variable "$error" est égale à NULL
+            if ($error === null) {
+                $query = $db->prepare('UPDATE post SET title = :title, content = :content, cover = :cover, categories_id = :category WHERE id = :id');
+                $query->bindValue(':title', $title);
+                $query->bindValue(':content', $content);
+                $query->bindValue(':cover', $picture);
+                $query->bindValue(':category', $categorie, PDO::PARAM_INT);
+                $query->bindValue(':id', $id, PDO::PARAM_INT);
+                $query->execute();
+    
+                $success = 'L\'article à bien été modifié';
+            }
+        }
+        else {
+            $error = 'Le titre, le contenu et la catégorie sont obligatoires';
+        }
+    }
 
 
 ?>
@@ -42,97 +92,77 @@
 
     <body>
         
-    <header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="#" title="Livres" class="titleColor">Books.</a>
-                    <p class="admin">Administrator</p>
-                </div>
-                <div class="col hamburgerTest d-lg-none">
-                  <button id="menuHamburgerButton" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'));navOnClick()" aria-label="Main Menu">
-                      <svg width="50" height="50" viewBox="0 0 100 100">
-                        <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                        <path class="line line2" d="M 20,50 H 80" />
-                        <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                      </svg>
-                    </button>
-  
-                    <div id="menuWrapped">
-                      <ul class="menuWrappedList">
-                          <li class="menuWrappedTitle"><a class="menuWrappedTitleReference" href="#" onclick="navOnClick()">Home</a></li>
-                          <li class="menuWrappedTitle"><a class="menuWrappedTitleReference" href="#" onclick="navOnClick()">Catégories</a></li>
-                          <li class="menuWrappedTitle"><a class="menuWrappedTitleReference" href="#" onclick="navOnClick()">Styles</a></li>
-                          <li class="menuWrappedTitle"><a class="menuWrappedTitleReference" href="#" onclick="navOnClick()">About</a></li>
-                          <li class="menuWrappedTitle"><a class="menuWrappedTitleReference" href="#" onclick="navOnClick()">Contact</a></li>
-                      </ul>
-                  </div>
-                  
-              </div>
-            </div>
-            <nav class="my-3">
-                <ul class="nav justify-content-center">
-                        
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="#">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="#">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="#">Contact</a>
-                      </li>
-                  </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+    <?php
+    require_once '../layouts/header.php';
+    ?>
        
-            <form action="update.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
+            <form action="edit.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data">
 
-                <div class="form-group pt-3 mb-3 w-50 m-auto d-flex flex-column ">
+            <!-- Affichage d'unmessage de succès si nécessaire -->
+            <?php if($success): ?>
+                        <div class="alert alert-success">
+                            <?php echo $success; ?>
+                        </div>
+                    <?php endif; ?>    
+
+                    <!-- Affichage d'une erreur formulaire si nécessaire -->
+                    <?php if($error !== null): ?>
+                        <div class="alert alert-danger">
+                            <?php echo $error; ?>
+                        </div>
+                    <?php endif; ?>    
+                        
+            
+            <div class="form-group pt-3 mb-3 w-50 m-auto d-flex flex-column ">
                 
                     <label for="title" class="mb-2">Title</label>
                 
-                    <input type="text" name="title" class="form-control" value="<?php echo "{$categ['title']}" ?>">
+                    <input type="text" name="title" class="form-control" value="<?php echo $title ?>">
                 </div>
     
 
                 <div class="form-group pt-3 w-50 m-auto d-flex flex-column">
                     <label for="content" class="mb-2">Contenu</label>
-                    <textarea  name="content" rows="10" ><?php echo  "{$categ['content']}" ?></textarea>
+                    <textarea  name="content" rows="10" ><?php echo  $content ?></textarea>
                 </div>
-                 
-                <div class="d-flex  w-50 m-auto gap-5">
-                    <select class="form-select form-select-lg  mt-5" name="categories" aria-label=".form-select-lg example">
-                        <option selected>Categorie</option> 
-           
-                <?php
-                    foreach ($testCat as $article) { ?>
-                    
-                        <option value="<?php echo $article['id']?>"><?php echo $article['name'] ?></option>
+                 <div class="row mb-4 w-50 m-auto">
+                    <div class="mb-3">
+                        <label for="categories" class="form-label">Catégories</label>
+                        <select class="form-select" name="categories" aria-label=".form-select-lg example">
+                            <option value="">Categorie</option> 
+            
                     <?php
-                        }
-                        ?>   
-                    </select>
-
-                    <div class="form-group pt-3 mb-3">
-                    <label for=""><?php echo "{$categ['cover']}" ?></label>
-                        <input type="file"  class="mt-3" name="cover">
-                    </div>
-                </div>
+                        foreach ($testCat as $category): ?>
+                        
+                            <option value="<?php echo $category['id'];?>" <?php echo ($categorie == $category['id']) ? 'selected': null; ?>>
+                                <?php echo $category['name'];?>
+                                </option>
+                            <?php endforeach; ?>   
+                        </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="cover" class="form-label">Image de couverture</label>
+                            <input class="form-control" type="file"  name="cover">
+                                <div id="coverHelpBlock" class="form-text">
+                                    L'image ne doit pas dépasser les 1Mo.
+                                </div>
+                        </div>
+                        <div class="col mb-3">
+                            <img src="../Images/upload/<?php echo $picture;?>" alt="Mon image" class="rounded">
+                            
+                        </div>
+                         
+                 </div>
+                
                 <div class="w-50 m-auto mt-5">
                     <button type="submit" class="btn btn-primary"> Enregistrer articles </button>
                 </div>
                 
                 </form>
+                <?php
+    require_once '../layouts/footer.php';
+    ?>
     </body>
 </html>
 
