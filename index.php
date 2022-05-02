@@ -146,6 +146,49 @@
                     </div>
                   </div>
             </div>
+            <?php
+              require_once 'vendor/autoload.php';
+              require_once 'connexion.php';
+             
+              
+              $query=$db->query('SELECT post.id, post.title, post.content, post.cover, post.createdAt, categories.name AS category FROM post
+              INNER JOIN categories ON categories.id = post.categories_id
+              ORDER BY post.createdAt DESC');
+              $post = $query->fetchAll();
+              foreach ($post as $article) {
+                $originalDate = "{$article['createdAt']}";
+                //Mettre une date du format angl
+                $DateTime = DateTime::createFromFormat('Y-m-d', $originalDate);
+                $newDate = $DateTime->format('m-F-Y');
+                $chaine = "{$article['content']}";
+                $shortText = substr($chaine,0,100) . "...";
+
+
+                echo '<div class="col-lg-6 col-md-12">'.
+                        '<div class="card ">'. 
+
+                              "<img src=Images/upload/{$article['cover']}   class=\"card-img-top\" alt=\"...\">".
+
+                              "<p class=\"card-text\">{$newDate}</p>".
+
+                          '<div class="card-body">'.
+
+                              "<h5 class=\"card-title\">{$article['title']} </h5>".
+
+                               "<p class=\"card-text\">{$shortText}</p>".
+
+                              "<a href=\"articlesTest.php?id\""."{$article['id']}"." class=\"btn btn-primary\">Plus d'infos</a>".
+
+                              "<a href=\"#\" class =\"btn btn-primary\"> 
+                              Categorie {$article['category']} </a>".
+
+                          '</div>'.
+                      '</div>'.
+                      
+                    '</div>';
+              };
+
+            ?>
         </div>
     </main>
     <footer>

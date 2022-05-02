@@ -12,53 +12,21 @@
     <title>Books</title>
 </head>
 <body>
-    <header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="../index.html" title="Livres" class="titleColor">Books.</a>
-                </div>
-                <div class="col hamburger d-lg-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </div>
-            </div>
-            <nav class="my-2">
-                <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+<?php
+    require_once '../layouts/header.php';
+    ?>
     <section>
         <div class="resumArticle">
-            <h1>The Weeked Deep</h1>
-            <img src="../Images/theweekeddeep.jpeg" alt="">
-            <h2>Chapitre 1 : La Mer</h2>
+            <h1>Harry Potter</h1>
+            <img src="../Images/HP1.jpg" alt="">
+            <h2>Résumé</h2>
             <p>
-                Trois sœurs arrivèrent à Sparrow, dans l’Oregon, en 1822, après avoir débarqué du Lady Astor, un navire qui faisait commerce de fourrure et qui coula dans le port cette même année, juste au-delà du cap.
-                Ces trois sœurs furent parmi les premières à s’installer dans la ville côtière tout juste fondée, dans ce nouveau territoire qu’elles parcouraient comme des oiseaux à fines pattes, cheveux caramel ondoyant au vent et peau pastel. Elles étaient belles – trop belles, diraient plus tard les gens de la ville. Marguerite, Aurora et Hazel tombaient souvent amoureuses, mais rarement des hommes qu’il fallait – plutôt de ceux dont le cœur appartenait déjà à quelqu’un. 
-                C’étaient des séductrices, des tentatrices auxquelles les hommes ne parvenaient pas à résister.
-                Mais pour les habitants de Sparrow, elles étaient bien davantage.
-                Ils pensaient qu’elles étaient des sorcières qui jetaient des sorts aux hommes pour les rendre infidèles.
-                Et c’est ainsi qu’à la fin du mois de juin, alors que la lune n’était plus qu’un éclat ténu dans le ciel couvert, on attacha des pierres aux chevilles des trois sœurs et on les jeta dans l’océan juste au-delà du cap, où elles sombrèrent et se noyèrent. Tout comme le navire sur lequel elles étaient arrivées....</p>
+                Après la mort de ses parents (Lily et James Potter), Harry Potter est recueilli par sa tante maternelle Pétunia et son oncle Vernon à l'âge d'un an. 
+                Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. 
+                Harry ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été, semble-t-il, tués dans un accident de voiture. 
+                Cependant, le jour des onze ans de Harry, un demi-géant du nom de Rubeus Hagrid vient le chercher pour l'informer de son inscription à Poudlard, une école de sorcellerie où il est inscrit depuis sa naissance, et lui remettre sa lettre. 
+                Il lui révèle qu’il a toujours été un sorcier, tout comme l'étaient ses parents, tués en réalité par le plus puissant mage noir du monde de la sorcellerie : Voldemort (surnommé « Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom », « Vous savez qui » ou « Tu sais qui »). 
+                Ce serait Harry lui-même, alors qu'il n'était encore qu'un bébé, qui aurait fait ricocher le sortilège que Voldemort lui destinait, neutralisant ses pouvoirs et le réduisant à l'état de créature insignifiante....</p>
         </div>
     </section>
     <section class="addComments">

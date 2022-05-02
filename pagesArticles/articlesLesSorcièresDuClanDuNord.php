@@ -49,16 +49,14 @@
     </div>
     <section>
         <div class="resumArticle">
-            <h1>The Weeked Deep</h1>
-            <img src="../Images/theweekeddeep.jpeg" alt="">
-            <h2>Chapitre 1 : La Mer</h2>
-            <p>
-                Trois sœurs arrivèrent à Sparrow, dans l’Oregon, en 1822, après avoir débarqué du Lady Astor, un navire qui faisait commerce de fourrure et qui coula dans le port cette même année, juste au-delà du cap.
-                Ces trois sœurs furent parmi les premières à s’installer dans la ville côtière tout juste fondée, dans ce nouveau territoire qu’elles parcouraient comme des oiseaux à fines pattes, cheveux caramel ondoyant au vent et peau pastel. Elles étaient belles – trop belles, diraient plus tard les gens de la ville. Marguerite, Aurora et Hazel tombaient souvent amoureuses, mais rarement des hommes qu’il fallait – plutôt de ceux dont le cœur appartenait déjà à quelqu’un. 
-                C’étaient des séductrices, des tentatrices auxquelles les hommes ne parvenaient pas à résister.
-                Mais pour les habitants de Sparrow, elles étaient bien davantage.
-                Ils pensaient qu’elles étaient des sorcières qui jetaient des sorts aux hommes pour les rendre infidèles.
-                Et c’est ainsi qu’à la fin du mois de juin, alors que la lune n’était plus qu’un éclat ténu dans le ciel couvert, on attacha des pierres aux chevilles des trois sœurs et on les jeta dans l’océan juste au-delà du cap, où elles sombrèrent et se noyèrent. Tout comme le navire sur lequel elles étaient arrivées....</p>
+            <h1>Gods of men</h1>
+            <img src="../Images/lesSorcièresduClanduNord.jpg.crdownload" alt="">
+            <h2>Prologue</h2>
+            <p>Les petites filles naquirent au moment où les horloges égenaient les douze coups de minuit. 
+                Lorsqu'elles sortirent enfin du ventre de leurs mères, mouillés et gluantes, leur petut visages chiffoné par l'effort de l'accouchement, les poings serrés et les yeux fermés, un nuage sombre passa devabe la luen.
+                Dans la forêt, le ciel devient noir. 
+                Une chauve-souris tomba, foudroyée en plein vol ; un saumon argenté remonta à la surface de la rivière, sans vie ; des escargotes de desséchèrent à l'intérieur de leur coquille; des papillons de nuit tombèrent en poussière, portés par la brise nocture, et une chouette dévora ses petits.
+                Un sort avait été jeté...</p>
         </div>
     </section>
     <section class="addComments">

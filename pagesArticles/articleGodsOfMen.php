@@ -12,53 +12,24 @@
     <title>Books</title>
 </head>
 <body>
-    <header class="colorBack">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col titlePosition">
-                    <a href="../index.html" title="Livres" class="titleColor">Books.</a>
-                </div>
-                <div class="col hamburger d-lg-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-nested" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </div>
-            </div>
-            <nav class="my-2">
-                <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Styles</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link menuTextColor" href="../index.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="pinkBar">
-    </div>
+<?php
+    require_once '../layouts/header.php';
+    ?>
     <section>
         <div class="resumArticle">
-            <h1>The Weeked Deep</h1>
-            <img src="../Images/theweekeddeep.jpeg" alt="">
-            <h2>Chapitre 1 : La Mer</h2>
+            <h1>Gods of men</h1>
+            <img src="../Images/Godsofmen.jpg" alt="">
+            <h2>Chapitre 1</h2>
             <p>
-                Trois sœurs arrivèrent à Sparrow, dans l’Oregon, en 1822, après avoir débarqué du Lady Astor, un navire qui faisait commerce de fourrure et qui coula dans le port cette même année, juste au-delà du cap.
-                Ces trois sœurs furent parmi les premières à s’installer dans la ville côtière tout juste fondée, dans ce nouveau territoire qu’elles parcouraient comme des oiseaux à fines pattes, cheveux caramel ondoyant au vent et peau pastel. Elles étaient belles – trop belles, diraient plus tard les gens de la ville. Marguerite, Aurora et Hazel tombaient souvent amoureuses, mais rarement des hommes qu’il fallait – plutôt de ceux dont le cœur appartenait déjà à quelqu’un. 
-                C’étaient des séductrices, des tentatrices auxquelles les hommes ne parvenaient pas à résister.
-                Mais pour les habitants de Sparrow, elles étaient bien davantage.
-                Ils pensaient qu’elles étaient des sorcières qui jetaient des sorts aux hommes pour les rendre infidèles.
-                Et c’est ainsi qu’à la fin du mois de juin, alors que la lune n’était plus qu’un éclat ténu dans le ciel couvert, on attacha des pierres aux chevilles des trois sœurs et on les jeta dans l’océan juste au-delà du cap, où elles sombrèrent et se noyèrent. Tout comme le navire sur lequel elles étaient arrivées....</p>
+                Sable alluma la petite bougie et plissa le nez. La cave du boucher empestait la rouille.
+                Des pattes de poulet dépassaient des caisses de rangement, les étagères ployaient sous le poids d’innombrables bocaux à saumure et des carcasses d’oiseau pendaient du plafond, donnant à la pièce un aspect macabre avec ses vestiges de vies passées qui suintaient dans chaque recoin. Des guirlandes de boyaux pendaient tels des rideaux de perles, et Sable faillit manquer l’énorme plan de travail, enseveli sous un enchevêtrement de hachoirs ensanglantés, de crochets à viande et de plumes. La cave de Velik était un véritable dépotoir. Rien de bien surprenant.
+                Si j’étais Velik, où est-ce que je cacherais des os ?
+                Son regard s’attarda sur un bahut.
+                Sable longea la table en prenant garde de ne rien heurter, ce qui n’était pas une mince affaire, et ouvrit le tiroir du haut. À l’intérieur, elle trouva des mètres de tissu et de corde, mais pas d’os. Elle ouvrit le tiroir suivant, puis un autre, la mine renfrognée. Ils devaient bien se trouver quelque part. Il en avait rapporté l’après-midi même.
+                Enfin, sous la table couverte de victuailles, elle aperçut un énorme baquet de graisse animale. L’extrémité pâle d’un fémur en ressortait.
+                Ce n’est pas vraiment là où je les aurais mis, mais je ne suis pas Velik, louées soient les gardiennes.
+                Sable s’accroupit à côté de la table, posa sa bougie et saisit le fémur ainsi qu’une articulation de hanche graisseuse. Elle les glissa dans la besace attachée à sa ceinture et replongea la main dans le tas de graisse. Elle venait de saisir un pied de sanglier quand le loquet de la porte de la cave cliqueta.
+                Sable étouffa un juron, souffla sa bougie et se précipita sous l’escalier. La porte de la cave s’ouvrit et la lumière d’une lanterne fendit la pénombre...</p>
         </div>
     </section>
     <section class="addComments">
