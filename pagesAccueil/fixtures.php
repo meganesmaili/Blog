@@ -11,6 +11,7 @@ $faker = Faker\Factory::create('fr_FR');
 
 //$db->query('SET FOREIGN_KEY_CHECKS = 0; TRUNCATE post; SET FOREIGN_KEY_CHECKS =1');
 
+
 //$categories = ["Science-fiction","Fantaisie","Fantastique","Théatre","Mangas"];
 
 // Insertion de fausses donnée en BDD dans la table catégorie
@@ -23,7 +24,10 @@ $faker = Faker\Factory::create('fr_FR');
 
 
 
+
+
 /*for ($i=0; $i < 20 ; $i++) { 
+>>>>>>> 7e5e3dbcfb1abaefda723a85da5bc31a8e81dbc8
 
     $createdAt= $faker->dateTimeBetween('-5 years');
 
@@ -36,7 +40,9 @@ $faker = Faker\Factory::create('fr_FR');
     $query->bindValue(':createdAt', $createdAt->format('Y-m-d'));
 
     $query->execute();
+
 }*/
+
 
 for ($i=0; $i < 55 ; $i++) { 
 
