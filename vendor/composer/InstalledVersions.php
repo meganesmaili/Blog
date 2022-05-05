@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '051a43b176809b5b67e10e80b038ab98c7e8fc09',
+    'reference' => '7e5e3dbcfb1abaefda723a85da5bc31a8e81dbc8',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '051a43b176809b5b67e10e80b038ab98c7e8fc09',
+      'reference' => '7e5e3dbcfb1abaefda723a85da5bc31a8e81dbc8',
     ),
     'fakerphp/faker' => 
     array (
@@ -82,12 +82,12 @@ private static $installed = array (
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v6.0.6',
-      'version' => '6.0.6.0',
+      'pretty_version' => 'v6.0.8',
+      'version' => '6.0.8.0',
       'aliases' => 
       array (
       ),
-      'reference' => '38358405ae948963c50a3aae3dfea598223ba15e',
+      'reference' => 'fa61dfb4bd3068df2492013dc65f3190e9f550c0',
     ),
   ),
 );
